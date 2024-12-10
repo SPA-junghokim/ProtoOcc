@@ -14,9 +14,9 @@
 
 
 ## News
-- [2025/01]: We will release the code of Proto.
+- [2025/01]: We will release the code of ProtoOcc.
 - [2024/12]: 🔥 ProtoOcc is accepted by AAAI 2025.
-- [2024/08]: ProtoOcc achieved the SOTA on Occ3D-nuScenes with **45.02% mIoU** (Multi-frame) and **39.56% mIoU** (Single-frame)!
+- [2024/08]: ProtoOcc achieves the SOTA on Occ3D-nuScenes with **45.02% mIoU** (Multi-frame) and **39.56% mIoU** (Single-frame)!
 </br>
 
 
@@ -27,15 +27,18 @@ In this paper, we introduce ProtoOcc, a novel 3D occupancy prediction model desi
 
 | <img src="plot/InferenceTime.png" alt="inference.jpg" width="600">|
 |:--:| 
-| **_Figure 1. Comparisons of the mIoU and runtime on the Occ3D-nuScenes validation set_.** . The "\*" indicates results reproduced using public codes. Inference time is measured on a single NVIDIA RTX 3090 GPU. |
+| **_Figure 1. Comparisons of the mIoU and runtime on the Occ3D-nuScenes validation set._**  The "\*" indicates results reproduced using public codes. Inference time is measured on a single NVIDIA RTX 3090 GPU. |
 
 
+| <img src="plot/MainTable1.png" alt="inference.jpg" width="1000">|
+|:--:| 
+| **_Table 2. Comparison with single-frame methods on the Occ3D-nuScenes validation set._**  Latency is measured on a single NVIDIA RTX 3090 GPU. The "-" denotes that the associated results are not available. The "†" denotes that the latency was measured on an NVIDIA V100 GPU as reported in the paper. The "\*" indicates results reproduced using public code. |
 
-## Model Zoo
 
-| Backbone | Method | Temporal |  Lr Schd | mIoU | Config | Download |
-| :---: | :---: | :---: | :---: | :---: | :---:| :---: | 
-| [R50]() | ProtoOcc | Single | 24ep | 39.56 | [config]() |[model]() |
-| [R50]() | ProtoOcc | Multi | 24ep | 45.02 | [config]() |[model]() |
+| <img src="plot/MainTable2.png" alt="inference.jpg" width="500">|
+|:--:| 
+| **_Table 2. Comparison with multi-frame methods on the Occ3D-nuScenes validation set._**  |
+
+
 
 
