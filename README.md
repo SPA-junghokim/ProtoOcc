@@ -14,7 +14,7 @@
 
 ## News
 - [2025/01]: We will release the code of ProtoOcc.
-- [2024/12]: ProtoOcc is accepted by AAAI 2025. 🔥
+- [2024/12]: ProtoOcc is accepted at AAAI 2025. 🔥
 - [2024/08]: ProtoOcc achieves the SOTA on Occ3D-nuScenes with **45.02% mIoU** (Multi-frame) and **39.56% mIoU, 12.83 FPS** (Single-frame)!
 </br>
 
