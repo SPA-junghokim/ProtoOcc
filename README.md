@@ -3,7 +3,7 @@
 # ProtoOcc: Accurate, Efficient 3D Occupancy Prediction Using Dual Branch Encoder-Prototype Query Decoder
 </div>
 
-
+[![arXiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2412.08774)
 
 > **ProtoOcc: Accurate, Efficient 3D Occupancy Prediction Using Dual Branch Encoder-Prototype Query Decoder**, AAAI 2025.  
 > Jungho Kim*, Changwon Kang*, Dongyoung Lee*, Sehwan Choi, Jun Won Choi†  
