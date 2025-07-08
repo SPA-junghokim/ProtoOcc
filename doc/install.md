@@ -88,6 +88,7 @@ python tools/create_data_bevdet.py
     ├── projects
     ├── requirements
     ├── tools
+    ├── plot
     └── README.md
 ```
 
