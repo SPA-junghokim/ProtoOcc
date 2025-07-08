@@ -1,0 +1,15 @@
+setup.py
+ProtoCcc_plugin.egg-info/PKG-INFO
+ProtoCcc_plugin.egg-info/SOURCES.txt
+ProtoCcc_plugin.egg-info/dependency_links.txt
+ProtoCcc_plugin.egg-info/not-zip-safe
+ProtoCcc_plugin.egg-info/top_level.txt
+mmdet3d_plugin/ops/bev_pool/src/bev_max_pool.cpp
+mmdet3d_plugin/ops/bev_pool/src/bev_max_pool_cuda.cu
+mmdet3d_plugin/ops/bev_pool/src/bev_pooling.cpp
+mmdet3d_plugin/ops/bev_pool/src/bev_sum_pool.cpp
+mmdet3d_plugin/ops/bev_pool/src/bev_sum_pool_cuda.cu
+mmdet3d_plugin/ops/bev_pool_v2/src/bev_pool.cpp
+mmdet3d_plugin/ops/bev_pool_v2/src/bev_pool_cuda.cu
+mmdet3d_plugin/ops/voxel_pooling/src/voxel_pooling_forward.cpp
+mmdet3d_plugin/ops/voxel_pooling/src/voxel_pooling_forward_cuda.cu

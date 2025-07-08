@@ -1,0 +1,17 @@
+gts/
+gts
+ckpts/
+ckpts
+data/
+data
+work_dirs/
+work_dirs
+
+*.o
+*.so
+*.pyc
+projects/build
+*old*
+build-old
+ppl.cv
+*/__pycache__/*
