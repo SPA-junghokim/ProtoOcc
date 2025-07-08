@@ -105,15 +105,19 @@ ProtoOcc
         ├── dataset/
             ├── sequences
                 ├── 00
-                │   ├── calib.txt
-                │   ├── image_2/
-                │   ├── image_3/
-                │   ├── voxels/
+                    ├── calib.txt
+                    ├── poses.txt
+                    ├── calib.txt
+                    ├── labels/
+                    ├── image_2/
+                    ├── image_3/
+                    ├── velodyne/
+                    └── voxels/
                 ├── 01
                 ├── 02
                 ├── ...
-                ├── 21
-            ├── labels
+                └── 10
+            └── labels
 ```
 
 Preprocess the annotations for semantic scene completion:
