@@ -22,12 +22,18 @@
 ## Demo
 ![demo](./plot/Demo1_v1.gif)
 
-## ⚡ ProtoOcc Performance
+## 💡 Method
+<p align="center">
+<img src="plot/ProtoOcc_Overall.png" alt="inference.jpg">
+</p>
+
+**Overall structure of ProtoOcc.** **(a)** Dual Branch Encoder captures fine-grained 3D structures and models the large receptive fields in voxel and BEV domains, respectively. **(b)** The Prototype Query Decoder generates Scene-Aware Queries utilizing prototypes and achieves fast inference without iterative query decoding. **(c)** Our ProtoOcc framework integrates Dual Branch Encoder and Prototype Mask Decoder for 3D occupancy prediction.
+
+## ⚡ Main Result
 <p align="center">
 <img src="plot/InferenceTime.png" alt="inference.jpg" width="600">
 </p>
 
-## Main Result
 ### nuScenes Result
 | Config                              | Temporal | Backbone | Input Size | Pooling Method | mIoU  | Google | Hugging | 
 |:----------------------------------:|:-------------:|:--------:|:----------:|:----------:|:-----:|:-----:|:-----:|
