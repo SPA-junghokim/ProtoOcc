@@ -54,7 +54,8 @@ sudo docker run -it -e DISPLAY=unix$DISPLAY --gpus all --ipc=host -v /{src}:/{ta
         └── nuscenes
             ├── v1.0-trainval 
             ├── sweeps 
-            ├── samples 
+            ├── samples
+            ├── pc_panoptic (for auxiliary task)
             └── gts 
 ```
 
@@ -72,7 +73,8 @@ python tools/create_data_bevdet.py
         └── nuscenes
             ├── v1.0-trainval 
             ├── sweeps  
-            ├── samples 
+            ├── samples
+            ├── pc_panoptic
             ├── gts 
             ├── bevdetv2-nuscenes_infos_train.pkl 
             └── bevdetv2-nuscenes_infos_val.pkl
@@ -97,22 +99,21 @@ python tools/create_data_bevdet.py
 
 To prepare for SemanticKITTI dataset, please download the [KITTI Odometry Dataset](https://www.cvlibs.net/datasets/kitti/eval_odometry.php) (including color, velodyne laser data, and calibration files) and the annotations for Semantic Scene Completion from [SemanticKITTI](http://www.semantic-kitti.org/dataset.html#download). Put all `.zip` files under `OccFormer/data/SemanticKITTI` and unzip these files. Then you should get the following dataset structure:
 ```
-OccFormer
+ProtoOcc
 ├── data/
-│   ├── SemanticKITTI/
-│   │   ├── data_velodyne/
-│   │   │   │   ├── velodyne/
-│   │   ├── dataset/
-│   │   │   ├── sequences
-│   │   │   │   ├── 00
-│   │   │   │   │   ├── calib.txt
-│   │   │   │   │   ├── image_2/
-│   │   │   │   │   ├── image_3/
-│   │   │   │   │   ├── voxels/
-│   │   │   │   ├── 01
-│   │   │   │   ├── 02
-│   │   │   │   ├── ...
-│   │   │   │   ├── 21
+    ├── SemanticKITTI/
+        ├── dataset/
+            ├── sequences
+                ├── 00
+                │   ├── calib.txt
+                │   ├── image_2/
+                │   ├── image_3/
+                │   ├── voxels/
+                ├── 01
+                ├── 02
+                ├── ...
+                ├── 21
+            ├── labels
 ```
 
 Preprocess the annotations for semantic scene completion:
