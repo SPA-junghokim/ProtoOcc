@@ -12,9 +12,6 @@
 </div>
 
 
-
-
-
 ## News
 - [2025/07]: We released the full code & checkpoints of ProtoOcc, including **nuScenes (Single & Multi frame)** and **SemanticKITTI**.
 - [2024/12]: ProtoOcc is accepted at AAAI 2025. 🔥
@@ -29,30 +26,39 @@
 ### nuScenes Result
 | Config                              | Temporal | Backbone | Input Size | Pooling Method | mIoU  | Model |
 |:----------------------------------:|:-------------:|:--------:|:----------:|:----------:|:-----:|:-----:|
-| ProtoOcc_1key                        |   1 Frame    |   R50    |  256x704   |   BEVDepth    | **39.56** |  gdrive     |  
-| ProtoOcc_longterm                    |   8 Frames    |   R50    |  256x704   |   BEVStereo    | **45.02** |  gdrive     |  
+| [ProtoOcc_1key](projects/configs/ProtoOcc/ProtoOcc_1key.py)                        |   1 Frame    |   R50    |  256x704   |   BEVDepth    | **39.56** |  [gdrive](https://drive.google.com/file/d/1StxjW5rUXrsTvMKphkyxRfm6kWK-1f1N/view?usp=drive_link)     |  
+| [ProtoOcc_longterm](projects/configs/ProtoOcc/ProtoOcc_longterm.py)                    |   8 Frames    |   R50    |  256x704   |   BEVStereo    | **45.02** |  [gdrive](https://drive.google.com/file/d/1J-G1crZX4Xd3V_5XNRjUw4n4r9CnNvZ6/view?usp=drive_link)     |  
 
 ### Semantic-KITTI Result
 | Config                              | Temporal | Backbone | Input Size | Pooling Method | mIoU  | Model |
 |:----------------------------------:|:-------------:|:--------:|:----------:|:----------:|:-----:|:-----:|
-| ProtoOcc_semanticKITTI               |   1 Frame    |   R50    |  384x1280   |   BEVDepth    | **13.89** |  gdrive    |  
+| [ProtoOcc_semanticKITTI](projects/configs/ProtoOcc/ProtoOcc_semanticKITTI.py)               |   1 Frame    |   R50    |  384x1280   |   BEVDepth    | **13.89** |  [gdrive](https://drive.google.com/file/d/1qsNdCokN2JVA9bwQwFMK6X3fF58I8hqf/view?usp=drive_link)    |  
 
-## Get Started
-- Environment Setup
-- Model Training & Evaluation
+## Training & Evaluation
+- ### [Environment Setup](doc/install.md)
+
+### Training
+We trained all models using four RTX 3090 (24GB) GPUs.
+```
+CONFIG=ProtoOcc_1key # (ProtoOcc_1key / ProtoOcc_longterm / ProtoOcc_semanticKITTI)
+
+./tools/dist_train.sh projects/configs/ProtoOcc/${CONFIG}.py 4 --work-dir ./work_dirs/${CONFIG}
+```
+
+### Evaluation
+If you want to get the pretrained weights, download them from [Here](https://drive.google.com/drive/folders/1-hHITEyUVnbEHaI80u6C6ZiUmdXLoFjy?usp=drive_link).  
+To measure inference speed, uncomment `# fp16 = dict(loss_scale='dynamic')` in the config file.  
+```
+CONFIG=ProtoOcc_1key # (ProtoOcc_1key / ProtoOcc_longterm / ProtoOcc_semanticKITTI)
+
+bash tools/dist_test.sh ./projects/configs/${CONFIG}.py ./work_dirs/${CONFIG}/${CONFIG}.pth 1 --eval bboxx
+```
 
 ## 🙏 Acknowledgement
 
 This project builds upon several outstanding open-source projects. We gratefully acknowledge the following key contributions.
 
-- [open-mmlab](https://github.com/open-mmlab)
-- [Occ3D](https://github.com/Tsinghua-MARS-Lab/Occ3D)
-- [BEVDet](https://github.com/HuangJunJie2017/BEVDet)
-- [SurroundOcc](https://github.com/weiyithu/SurroundOcc)
-- [OccFormer](https://github.com/zhangyp15/OccFormer)
-- [FB-OCC](https://github.com/NVlabs/FB-BEV)
-- [FlashOCC](https://github.com/Yzichen/FlashOCC)
-- [COTR](https://github.com/NotACracker/COTR)
+- [open-mmlab](https://github.com/open-mmlab), [DN-DETR](https://github.com/IDEA-Research/DN-DETR), [Occ3D](https://github.com/Tsinghua-MARS-Lab/Occ3D), [BEVDet](https://github.com/HuangJunJie2017/BEVDet), [OccFormer](https://github.com/zhangyp15/OccFormer), [FB-OCC](https://github.com/NVlabs/FB-BEV), [FlashOCC](https://github.com/Yzichen/FlashOCC), [COTR](https://github.com/NotACracker/COTR)
 
 ## 📃 Bibtex
 
