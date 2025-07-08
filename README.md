@@ -26,11 +26,16 @@
 <img src="plot/InferenceTime.png" alt="inference.jpg" width="600">
 
 ## Main Result
-| Config                              | Dataset       | Temporal | Backbone | Input Size | Pooling Method | mIoU  | Model |
-|:------------------------------------|:-------------:|:-------------:|:--------:|:----------:|:----------:|:-----:|:-----:|
-| ProtoOcc_1key                       | nuScenes |   1 Frame    |   R50    |  256x704   |   BEVDepth    | **39.56** |  gdrive     |  
-| ProtoOcc_longterm                   | nuScenes |   8 Frames    |   R50    |  256x704   |   BEVStereo    | **45.02** |  gdrive     |  
-| ProtoOcc_semanticKITTI              | SemanticKITTI |   1 Frame    |   R50    |  384x1280   |   BEVDepth    | **13.89** |  gdrive    |  
+### nuScenes Result
+| Config                              | Temporal | Backbone | Input Size | Pooling Method | mIoU  | Model |
+|:----------------------------------:|:-------------:|:--------:|:----------:|:----------:|:-----:|:-----:|
+| ProtoOcc_1key                        |   1 Frame    |   R50    |  256x704   |   BEVDepth    | **39.56** |  gdrive     |  
+| ProtoOcc_longterm                    |   8 Frames    |   R50    |  256x704   |   BEVStereo    | **45.02** |  gdrive     |  
+
+### Semantic-KITTI Result
+| Config                              | Temporal | Backbone | Input Size | Pooling Method | mIoU  | Model |
+|:----------------------------------:|:-------------:|:--------:|:----------:|:----------:|:-----:|:-----:|
+| ProtoOcc_semanticKITTI               |   1 Frame    |   R50    |  384x1280   |   BEVDepth    | **13.89** |  gdrive    |  
 
 ## Get Started
 - Environment Setup
