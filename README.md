@@ -29,15 +29,15 @@
 
 ## Main Result
 ### nuScenes Result
-| Config                              | Temporal | Backbone | Input Size | Pooling Method | mIoU  | Model |
-|:----------------------------------:|:-------------:|:--------:|:----------:|:----------:|:-----:|:-----:|
-| [ProtoOcc_1key](projects/configs/ProtoOcc/ProtoOcc_1key.py)                        |   1 Frame    |   R50    |  256x704   |   BEVDepth    | **39.56** |  [gdrive](https://drive.google.com/file/d/1StxjW5rUXrsTvMKphkyxRfm6kWK-1f1N/view?usp=drive_link)     |  
-| [ProtoOcc_longterm](projects/configs/ProtoOcc/ProtoOcc_longterm.py)                    |   8 Frames    |   R50    |  256x704   |   BEVStereo    | **45.02** |  [gdrive](https://drive.google.com/file/d/1J-G1crZX4Xd3V_5XNRjUw4n4r9CnNvZ6/view?usp=drive_link)     |  
+| Config                              | Temporal | Backbone | Input Size | Pooling Method | mIoU  | Google | Hugging | 
+|:----------------------------------:|:-------------:|:--------:|:----------:|:----------:|:-----:|:-----:|:-----:|
+| [ProtoOcc_1key](projects/configs/ProtoOcc/ProtoOcc_1key.py)                        |   1 Frame    |   R50    |  256x704   |   BEVDepth    | **39.56** |  [link](https://drive.google.com/file/d/1StxjW5rUXrsTvMKphkyxRfm6kWK-1f1N/view?usp=drive_link)     | [link](https://huggingface.co/junghokim/ProtoOcc/blob/main/ProtoOcc_1key.pth) |
+| [ProtoOcc_longterm](projects/configs/ProtoOcc/ProtoOcc_longterm.py)                    |   8 Frames    |   R50    |  256x704   |   BEVStereo    | **45.02** |  [link](https://drive.google.com/file/d/1J-G1crZX4Xd3V_5XNRjUw4n4r9CnNvZ6/view?usp=drive_link)     |  [link](https://huggingface.co/junghokim/ProtoOcc/blob/main/ProtoOcc_longterm.pth) |
 
 ### Semantic-KITTI Result
-| Config                              | Temporal | Backbone | Input Size | Pooling Method | mIoU  | Model |
-|:----------------------------------:|:-------------:|:--------:|:----------:|:----------:|:-----:|:-----:|
-| [ProtoOcc_semanticKITTI](projects/configs/ProtoOcc/ProtoOcc_semanticKITTI.py)               |   1 Frame    |   R50    |  384x1280   |   BEVDepth    | **13.89** |  [gdrive](https://drive.google.com/file/d/1qsNdCokN2JVA9bwQwFMK6X3fF58I8hqf/view?usp=drive_link)    |  
+| Config                              | Temporal | Backbone | Input Size | Pooling Method | mIoU  | Google |Hugging | 
+|:----------------------------------:|:-------------:|:--------:|:----------:|:----------:|:-----:|:-----:|:-----:|
+| [ProtoOcc_semanticKITTI](projects/configs/ProtoOcc/ProtoOcc_semanticKITTI.py)               |   1 Frame    |   R50    |  384x1280   |   BEVDepth    | **13.89** |  [link](https://drive.google.com/file/d/1qsNdCokN2JVA9bwQwFMK6X3fF58I8hqf/view?usp=drive_link)    |  [link](https://huggingface.co/junghokim/ProtoOcc/blob/main/ProtoOcc_semanticKITTI.pth) |
 
 ## Training & Evaluation
 - ### [Environment Setup](doc/install.md)
@@ -51,7 +51,7 @@ CONFIG=ProtoOcc_1key # (ProtoOcc_1key / ProtoOcc_longterm / ProtoOcc_semanticKIT
 ```
 
 ### Evaluation
-If you want to get the pretrained weights, download them from [Here](https://drive.google.com/drive/folders/1-hHITEyUVnbEHaI80u6C6ZiUmdXLoFjy?usp=drive_link).  
+If you want to get the pretrained weights, download them from [Google Drive](https://drive.google.com/drive/folders/1-hHITEyUVnbEHaI80u6C6ZiUmdXLoFjy?usp=drive_link) or [Hugging Face](https://huggingface.co/junghokim/ProtoOcc/tree/main).  
 To measure inference speed, uncomment `# fp16 = dict(loss_scale='dynamic')` in the config file.  
 ```
 CONFIG=ProtoOcc_1key # (ProtoOcc_1key / ProtoOcc_longterm / ProtoOcc_semanticKITTI)
