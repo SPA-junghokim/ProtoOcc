@@ -19,8 +19,13 @@
 </br>
 
 
+## Demo
+![demo](./plot/Demo1_v1.gif)
+
 ## ⚡ ProtoOcc Performance
+<p align="center">
 <img src="plot/InferenceTime.png" alt="inference.jpg" width="600">
+</p>
 
 ## Main Result
 ### nuScenes Result
