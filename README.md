@@ -5,9 +5,12 @@
 [**Jungho Kim***](https://scholar.google.com/citations?user=9wVmZ5kAAAAJ&hl=ko), **Changwon Kang***, **Dongyoung Lee***, [**Sehwan Choi**](https://scholar.google.com/citations?user=O2XSTY4AAAAJ&hl=ko&oi=ao), [**Jun Won Choi†**](https://scholar.google.com/citations?user=IHH2PyYAAAAJ&hl=ko&oi=ao)  
 <sub>*: Equal Contribution,  †: Corresponding Author</sub>
 
+### **South Korea**
+
 ### **AAAI 2025**
 
 [![arXiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2412.08774)
+[![AAAI](https://img.shields.io/badge/AAAI-paper-blue)](https://ojs.aaai.org/index.php/AAAI/article/view/32450)
 
 </div>
 
