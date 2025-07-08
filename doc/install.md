@@ -84,8 +84,6 @@ python tools/create_data_bevdet.py
         ├── efficientnet-b7_3rdparty_8xb32-aa_in1k_20220119-bf03951c.pth
         └── occformer_kitti.pth (this file is from "https://github.com/zhangyp15/OccFormer")
     └── doc
-        ├── install.md
-        └── train_test.md
     ├── mmdetection3d 
     ├── projects
     ├── requirements
