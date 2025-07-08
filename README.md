@@ -1,44 +1,67 @@
 <div align="center">   
   
 # ProtoOcc: Accurate, Efficient 3D Occupancy Prediction Using Dual Branch Encoder-Prototype Query Decoder
-</div>
+
+[**Jungho Kim***](https://scholar.google.com/citations?user=9wVmZ5kAAAAJ&hl=ko), **Changwon Kang***, **Dongyoung Lee***, [**Sehwan Choi**](https://scholar.google.com/citations?user=O2XSTY4AAAAJ&hl=ko&oi=ao), [**Jun Won Choi†**](https://scholar.google.com/citations?user=IHH2PyYAAAAJ&hl=ko&oi=ao)  
+<sub>*: Equal Contribution,  †: Corresponding Author</sub>
+
+### **AAAI 2025**
 
 [![arXiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2412.08774)
 
-> **ProtoOcc: Accurate, Efficient 3D Occupancy Prediction Using Dual Branch Encoder-Prototype Query Decoder**, AAAI 2025.  
-> Jungho Kim*, Changwon Kang*, Dongyoung Lee*, Sehwan Choi, Jun Won Choi†  
-> *: Equal Contribution,  †: Corresponding Author
+</div>
+
 
 
 
 
 ## News
-- [2025/01]: We will release the code of ProtoOcc.
+- [2025/07]: We released the full code & checkpoints of ProtoOcc, including **nuScenes (Single & Multi frame)** and **SemanticKITTI**.
 - [2024/12]: ProtoOcc is accepted at AAAI 2025. 🔥
 - [2024/08]: ProtoOcc achieves the SOTA on Occ3D-nuScenes with **45.02% mIoU** (Multi-frame) and **39.56% mIoU, 12.83 FPS** (Single-frame)!
 </br>
 
 
-## ProtoOcc
-| <img src="plot/InferenceTime.png" alt="inference.jpg" width="600">|
-|:--:| 
-| **_Figure 1. Comparisons of the mIoU and runtime on the Occ3D-nuScenes validation set._**  The "\*" indicates results reproduced using public codes. Inference time is measured on a single NVIDIA RTX 3090 GPU. |
+## ⚡ ProtoOcc Performance
+<img src="plot/InferenceTime.png" alt="inference.jpg" width="600">
 
+## Main Result
+| Config                              | Dataset       | Temporal | Backbone | Input Size | Pooling Method | mIoU  | Model |
+|:------------------------------------|:-------------:|:-------------:|:--------:|:----------:|:----------:|:-----:|:-----:|
+| ProtoOcc_1key                       | nuScenes |   1 Frame    |   R50    |  256x704   |   BEVDepth    | **39.56** |  gdrive     |  
+| ProtoOcc_longterm                   | nuScenes |   8 Frames    |   R50    |  256x704   |   BEVStereo    | **45.02** |  gdrive     |  
+| ProtoOcc_semanticKITTI              | SemanticKITTI |   1 Frame    |   R50    |  384x1280   |   BEVDepth    | **13.89** |  gdrive    |  
 
-| <img src="plot/MainTable1.png" alt="inference.jpg" width="1000">|
-|:--:| 
-| **_Table 1. Comparison with single-frame methods on the Occ3D-nuScenes validation set._**  Latency is measured on a single NVIDIA RTX 3090 GPU. The "-" denotes that the associated results are not available. The "†" denotes that the latency was measured on an NVIDIA V100 GPU as reported in the paper. The "\*" indicates results reproduced using public code. |
+## Get Started
+- Environment Setup
+- Model Training & Evaluation
 
+## 🙏 Acknowledgement
 
-| <img src="plot/MainTable2.png" alt="inference.jpg" width="500">|
-|:--:| 
-| **_Table 2. Comparison with multi-frame methods on the Occ3D-nuScenes validation set._**  |
+This project builds upon several outstanding open-source projects. We gratefully acknowledge the following key contributions.
 
+- [open-mmlab](https://github.com/open-mmlab)
+- [Occ3D](https://github.com/Tsinghua-MARS-Lab/Occ3D)
+- [BEVDet](https://github.com/HuangJunJie2017/BEVDet)
+- [SurroundOcc](https://github.com/weiyithu/SurroundOcc)
+- [OccFormer](https://github.com/zhangyp15/OccFormer)
+- [FB-OCC](https://github.com/NVlabs/FB-BEV)
+- [FlashOCC](https://github.com/Yzichen/FlashOCC)
+- [COTR](https://github.com/NotACracker/COTR)
 
+## 📃 Bibtex
 
+If you find this work useful for your research or projects, please consider citing the following BibTeX entry.
 
-## Abstract
-In this paper, we introduce ProtoOcc, a novel 3D occupancy prediction model designed to predict the occupancy states and semantic classes of 3D voxels through a deep semantic understanding of scenes. ProtoOcc consists of two main components: the Dual Branch Encoder (DBE) and the Prototype Query Decoder (PQD). The DBE produces a new 3D voxel representation by combining 3D voxel and BEV representations across multiple scales through a dual branch structure. This design enhances both performance and computational efficiency by providing a large receptive field for the BEV representation while maintaining a smaller receptive field for the voxel representation. The PQD introduces Prototype Queries to accelerate the decoding process. Scene-Adaptive Prototypes are derived from the 3D voxel features of input sample, while Scene-Agnostic Prototypes are computed by applying Scene-Adaptive Prototypes to an Exponential Moving Average during the training phase. By using these prototype-based queries for decoding, we can directly predict 3D occupancy in a single step, eliminating the need for iterative Transformer decoding. Additionally, we propose the Robust Prototype Learning, which injects noise into prototype generation process and trains the model to denoise during the training phase. ProtoOcc achieves state-of-the-art performance with 45.02% mIoU on the Occ3D-nuScenes benchmark. For single-frame method, it reaches 39.52% mIoU with an inference speed of 12.83 FPS on an NVIDIA RTX 3090.
-
-
+```
+@inproceedings{kim2025protoocc,
+  title={Protoocc: Accurate, efficient 3d occupancy prediction using dual branch encoder-prototype query decoder},
+  author={Kim, Jungho and Kang, Changwon and Lee, Dongyoung and Choi, Sehwan and Choi, Jun Won},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={39},
+  number={4},
+  pages={4284--4292},
+  year={2025}
+}
+```
 
