@@ -10,7 +10,7 @@
 ### **AAAI 2025**
 
 [![arXiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2412.08774)
-[![AAAI](https://img.shields.io/badge/AAAI-paper-blue)](https://ojs.aaai.org/index.php/AAAI/article/view/32450)
+[![AAAI](https://img.shields.io/badge/AAAI-Paper-blue)](https://ojs.aaai.org/index.php/AAAI/article/view/32450)
 
 </div>
 
