@@ -15,14 +15,14 @@
 </div>
 
 
-## News
+## 🔔 News
 - [2025/07]: We released the full code & checkpoints of ProtoOcc, including **nuScenes (Single & Multi frame)** and **SemanticKITTI**.
 - [2024/12]: ProtoOcc is accepted at AAAI 2025. 🔥
 - [2024/08]: ProtoOcc achieves the SOTA on Occ3D-nuScenes with **45.02% mIoU** (Multi-frame) and **39.56% mIoU, 12.83 FPS** (Single-frame)!
 </br>
 
 
-## Demo
+## 📽️ Demo
 ![demo](./plot/Demo1_v1.gif)
 
 ## 💡 Method
@@ -48,7 +48,7 @@
 |:----------------------------------:|:-------------:|:--------:|:----------:|:----------:|:-----:|:-----:|:-----:|
 | [ProtoOcc_semanticKITTI](projects/configs/ProtoOcc/ProtoOcc_semanticKITTI.py)               |   1 Frame    |   R50    |  384x1280   |   BEVDepth    | **13.89** |  [link](https://drive.google.com/file/d/1qsNdCokN2JVA9bwQwFMK6X3fF58I8hqf/view?usp=drive_link)    |  [link](https://huggingface.co/junghokim/ProtoOcc/blob/main/ProtoOcc_semanticKITTI.pth) |
 
-## Training & Evaluation
+## 📚 Training & Evaluation
 - ### [Environment Setup](doc/install.md)
 
 ### Training
