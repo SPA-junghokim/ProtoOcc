@@ -1,5 +1,6 @@
 ## Environment Setup
 ### step 1. Install environment or Docker Pull
+Install environment
 ```
 conda create --name ProtoOcc python=3.7.11
 conda activate ProtoOcc
@@ -27,7 +28,14 @@ pip install tensorboard
 pip install trimesh==2.35.39
 pip install setuptools==59.5.0
 pip install yapf==0.40.1
-
+```
+Docker pull command
+```
+docker pull junghokim1/protoocc:python3.7-torch-1.10.0-cu111
+sudo docker run -it -e DISPLAY=unix$DISPLAY --gpus all --ipc=host -v /{src}:/{tar} -e XAUTHORITY=/tmp/.docker.xauth --name ProtoOcc junghokim1/protoocc:python3.7-torch-1.10.0-cu111 /bin/bash
+```
+#### After setting up the environment or pulling the Docker image, run `git clone` and `pip install`.
+```
 git clone https://github.com/SPA-junghokim/ProtoOcc
 cd ProtoOcc
 
@@ -40,11 +48,7 @@ cd ../projects
 pip install -v -e .
 cd ..
 ```
-Docker pull command
-```
-docker pull junghokim1/protoocc:python3.7-torch-1.10.0-cu111
-sudo docker run -it -e DISPLAY=unix$DISPLAY --gpus all --ipc=host -v /{src}:/{tar} -e XAUTHORITY=/tmp/.docker.xauth --name ProtoOcc junghokim1/protoocc:python3.7-torch-1.10.0-cu111 /bin/bash
-```
+
 ### Step 2. Download and unzip the [nuScenes dataset](https://www.nuscenes.org/download), and get the gts folder from [CVPR2023-3D-Occupancy-Prediction](https://github.com/CVPR2023-3D-Occupancy-Prediction/CVPR2023-3D-Occupancy-Prediction).
 
 ### step 3. Prepare nuScenes dataset as below:
