@@ -72,7 +72,7 @@ bash tools/dist_test.sh ./projects/configs/${CONFIG}.py ./work_dirs/${CONFIG}/${
 
 This project builds upon several outstanding open-source projects. We gratefully acknowledge the following key contributions.
 
-- [open-mmlab](https://github.com/open-mmlab), [DN-DETR](https://github.com/IDEA-Research/DN-DETR), [Occ3D](https://github.com/Tsinghua-MARS-Lab/Occ3D), [BEVDet](https://github.com/HuangJunJie2017/BEVDet), [OccFormer](https://github.com/zhangyp15/OccFormer), [FB-OCC](https://github.com/NVlabs/FB-BEV), [FlashOCC](https://github.com/Yzichen/FlashOCC), [COTR](https://github.com/NotACracker/COTR)
+- [open-mmlab](https://github.com/open-mmlab), [DN-DETR](https://github.com/IDEA-Research/DN-DETR), [Occ3D](https://github.com/Tsinghua-MARS-Lab/Occ3D), [BEVDet](https://github.com/HuangJunJie2017/BEVDet), [OccFormer](https://github.com/zhangyp15/OccFormer), [FB-OCC](https://github.com/NVlabs/FB-BEV), [FlashOCC](https://github.com/Yzichen/FlashOCC), [COTR](https://github.com/NotACracker/COTR) [SOGDet](https://github.com/zhouqiu/SOGDet)
 
 ## 📃 Bibtex
 
