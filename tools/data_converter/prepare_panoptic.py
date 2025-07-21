@@ -21,7 +21,7 @@ def parse_args():
     parser.add_argument(
         '--save_path',
         type=str,
-        default='./data/nuscenes/pc_panoptic_temp/',
+        default='./data/nuscenes/pc_panoptic/',
         required=False,
         help='specify the target path of dataset')
     parser.add_argument(
