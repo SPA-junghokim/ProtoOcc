@@ -49,45 +49,57 @@ pip install -v -e .
 cd ..
 ```
 
-### Step 2. Download and unzip the [nuScenes dataset](https://www.nuscenes.org/download), and get the gts folder from [CVPR2023-3D-Occupancy-Prediction](https://github.com/CVPR2023-3D-Occupancy-Prediction/CVPR2023-3D-Occupancy-Prediction).
+### Step 2. Download and unzip the [nuScenes dataset](https://www.nuscenes.org/download) (including panoptic files), and get the gts folder from [CVPR2023-3D-Occupancy-Prediction](https://github.com/CVPR2023-3D-Occupancy-Prediction/CVPR2023-3D-Occupancy-Prediction).
+For auxiliary task (perspective semantic segmentation), replace `v1.0-trainval/category.json` within the received folder with the `category.json` in `./data/nuscenes/v1.0-trainval`, and move `v1.0-trainval/panoptic.json` from the received folder to `./data/nuscenes/v1.0-trainval`.
 
 ### step 3. Prepare nuScenes dataset as below:
 ```shell script
 └── ProtoOcc/
     └── data
         └── nuscenes
-            ├── v1.0-trainval 
+            ├── v1.0-trainval
+                ├── panoptic.json
+                ├── category.json # (from nuscenes panoptic)
+                ├── ...
             ├── sweeps 
             ├── samples
-            ├── pc_panoptic (for auxiliary task)
+            ├── panoptic
             └── gts 
 ```
 
-### step 4. Create the pkl or download [Here](https://drive.google.com/drive/folders/1aiG4wmsj4Q7cJBQ4-H1lrG8wiFIhoa-W?usp=drive_link):
-```shell
+
+### step 4. Preprocess for training
+
+Create the pkl or download [Here](https://drive.google.com/drive/folders/1aiG4wmsj4Q7cJBQ4-H1lrG8wiFIhoa-W?usp=drive_link):
+```shell script
 python tools/create_data_bevdet.py
 ```
+
+Run code below for `pc_panoptic`
+```shell script
+python tools/data_converter/prepare_panoptic.py
+```
+
 
 ### step 5. Download [ckpts](https://drive.google.com/drive/folders/1e459AGnjwtatnakv2kyOR2beweJTk03e?usp=sharing) to `ProtoOcc/ckpts/`:
 
 ### The final directory should be organized as follows 
 ```shell script
 └── ProtoOcc/
-    └── data
+    ├── data
         └── nuscenes
             ├── v1.0-trainval 
             ├── sweeps  
             ├── samples
+            ├── panoptic
             ├── pc_panoptic
             ├── gts 
             ├── bevdetv2-nuscenes_infos_train.pkl 
             └── bevdetv2-nuscenes_infos_val.pkl
-    └── ckpts
-        ├── bevdet-r50-4d-depth-cbgs_depthnet_modify.pth (Renamed 'depth_net' in 'state_dict' for pretrained weights)
+    ├── ckpts
+        ├── bevdet-r50-4d-depth-cbgs_depthnet_modify.pth # (Renamed 'depth_net' in 'state_dict' for pretrained weights)
         ├── bevdet-r50-4dlongterm-stereo-cbgs.pth
-        ├── efficientnet-b7_3rdparty_8xb32-aa_in1k_20220119-bf03951c.pth
-        └── occformer_kitti.pth (this file is from "https://github.com/zhangyp15/OccFormer")
-    └── doc
+    ├── doc
     ├── mmdetection3d 
     ├── projects
     ├── requirements
@@ -100,26 +112,29 @@ python tools/create_data_bevdet.py
 ## SemanticKITTI
 
 To prepare for SemanticKITTI dataset, please download the [KITTI Odometry Dataset](https://www.cvlibs.net/datasets/kitti/eval_odometry.php) (including color, velodyne laser data, and calibration files) and the annotations for Semantic Scene Completion from [SemanticKITTI](http://www.semantic-kitti.org/dataset.html#download). Put all `.zip` files under `OccFormer/data/SemanticKITTI` and unzip these files. Then you should get the following dataset structure:
-```
-ProtoOcc
-├── data/
-    ├── SemanticKITTI/
-        ├── dataset/
-            ├── sequences
-                ├── 00
-                    ├── calib.txt
-                    ├── poses.txt
-                    ├── calib.txt
-                    ├── labels/
-                    ├── image_2/
-                    ├── image_3/
-                    ├── velodyne/
-                    └── voxels/
-                ├── 01
-                ├── 02
-                ├── ...
-                └── 10
-            └── labels
+```shell script
+└── ProtoOcc
+    ├── data/
+        └── SemanticKITTI/
+            └── dataset/
+                ├── sequences
+                    ├── 00
+                        ├── calib.txt
+                        ├── poses.txt
+                        ├── calib.txt
+                        ├── labels/
+                        ├── image_2/
+                        ├── image_3/
+                        ├── velodyne/
+                        └── voxels/
+                    ├── 01
+                    ├── 02
+                    ├── ...
+                    └── 10
+                └── labels
+    └── ckpts
+        ├── efficientnet-b7_3rdparty_8xb32-aa_in1k_20220119-bf03951c.pth
+        └── occformer_kitti.pth # (this file is from "https://github.com/zhangyp15/OccFormer")
 ```
 
 Preprocess the annotations for semantic scene completion:
